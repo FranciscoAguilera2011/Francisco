@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francisco Aguilera - Desarrollador</title>
+    <style>
+        :root {
+            --primary: #6B46C1;
+            --primary-light: #9F7AEA;
+            --primary-dark: #553C9A;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            min-height: 100vh;
+            padding: 1rem;
+            color: var(--white);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            margin-bottom: 0.5rem;
+            text-align: center;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--primary-light);
+            margin-bottom: 2rem;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        .section {
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transform: translateX(-20px);
+            opacity: 0;
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+        .section:nth-child(4) { animation-delay: 0.3s; }
+        .section:nth-child(5) { animation-delay: 0.4s; }
+        .section:nth-child(6) { animation-delay: 0.5s; }
+
+        h2 {
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
+        }
+
+        .info-item {
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--primary-light);
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            border-left-width: 6px;
+            padding-left: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .skill-note {
+            font-size: 0.9em;
+            color: var(--primary-light);
+            margin-top: 0.25rem;
+            font-style: italic;
+        }
+
+        .os-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .os-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .os-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .os-item h3 {
+            color: var(--primary-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .distros {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .achievement-list {
+            list-style-type: none;
+        }
+
+        .achievement-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .achievement-list li::before {
+            content: "•";
+            color: var(--primary-light);
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -0.2em;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--primary-light);
+            width: 0;
+            animation: fillBar 1s ease-out forwards;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 0.5rem;
+            }
+
+            .container {
+                padding: 1rem;
+                border-radius: 15px;
+            }
+
+            .section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .os-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fillBar {
+            to {
+                width: var(--fill);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Francisco Aguilera</h1>
+        <div class="subtitle">Desarrollador de Videojuegos y Aplicaciones | 14 años</div>
+
+        <div class="section">
+            <h2>Perfil Profesional</h2>
+            <div class="info-item">
+                <p>Soy un programador apasionado con experiencia en desarrollo de videojuegos, aplicaciones interactivas y soluciones personalizadas. A pesar de mi corta edad y nivel de aprendizaje, me he apoyado en herramientas de inteligencia artificial para potenciar mis proyectos y superar desafíos técnicos.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Dominio de Sistemas Operativos</h2>
+            <div class="os-grid">
+                <div class="os-item">
+                    <h3>Windows</h3>
+                    <p>Instalación y configuración avanzada</p>
+                </div>
+                <div class="os-item">
+                    <h3>Linux</h3>
+                    <p>Distribuciones:</p>
+                    <div class="distros">Linux Mint, Fedora, entre otras</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Experiencia en Programación y Tecnologías</h2>
+            <div class="info-item">
+                <span>Python (Desarrollo Independiente)</span>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="--fill: 90%"></div>
+                </div>
+            </div>
+            <div class="info-item">
+                <span>HTML (Con apoyo de IA)</span>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="--fill: 65%"></div>
+                </div>
+                <div class="skill-note">Desarrollo asistido por IA</div>
+            </div>
+            <div class="info-item">
+                <span>Desarrollo de Videojuegos</span>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="--fill: 95%"></div>
+                </div>
+                <div class="skill-note">Combinando herramientas tradicionales y IA</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Proyectos y Contribuciones Destacadas</h2>
+            <ul class="achievement-list">
+                <li>Desarrollo de un juego 2D con mecánicas de disparo estilo 'Contra', con opciones de personalización y música integrada.</li>
+                <li>Creación de aplicaciones con interfaces amigables, animaciones suaves y funcionalidad de cambio entre modos oscuro y claro.</li>
+                <li>Implementación de simulaciones en Python con controles intuitivos y animaciones realistas.</li>
+                <li>Configuración y optimización de sistemas operativos Windows y Linux para diferentes necesidades y usuarios.</li>
+            </ul>
+            <div class="info-item" style="margin-top: 1rem;">
+                <p>Aunque algunos proyectos están en desarrollo, destaco por mi capacidad para:</p>
+                <ul class="achievement-list" style="margin-top: 0.5rem;">
+                    <li>Proporcionar asesoramiento técnico y soluciones de código</li>
+                    <li>Desarrollar ideas y conceptos innovadores</li>
+                    <li>Ofrecer orientación en la implementación de funcionalidades</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Habilidades Técnicas Especializadas</h2>
+            <div class="info-item">
+                <span>Programación Python</span>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="--fill: 90%"></div>
+                </div>
+                <div class="skill-note">Desarrollo independiente</div>
+            </div>
+            <div class="info-item">
+                <span>Gestión de Sistemas Operativos</span>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="--fill: 85%"></div>
+                </div>
+            </div>
+            <div class="info-item">
+                <span>Diseño y Arquitectura de Videojuegos</span>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="--fill: 95%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
